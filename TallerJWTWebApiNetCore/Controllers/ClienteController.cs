@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TallerJWTWebApiNetCore.Models;
@@ -10,6 +11,7 @@ namespace TallerJWTWebApiNetCore.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ClienteController : ControllerBase
     {
         [HttpGet]
@@ -24,5 +26,7 @@ namespace TallerJWTWebApiNetCore.Controllers
             return Ok(clientes);
 
         }
+
+
     }
 }
